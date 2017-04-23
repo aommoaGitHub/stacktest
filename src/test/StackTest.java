@@ -113,8 +113,9 @@ public class StackTest {
 		stack.push("a");
 		stack.push("b");
 		assertTrue(stack.isFull());
-		assertEquals("b", stack.pop());
-		assertEquals("a", stack.pop());
+		String b = "b";
+		assertSame(stack.pop(), b);
+		assertSame(stack.pop(), b);
 		assertFalse(stack.isFull());
 		assertTrue(stack.isEmpty());
 	}
@@ -128,8 +129,9 @@ public class StackTest {
 		stack.push("a");
 		stack.push("b");
 		assertTrue(stack.isFull());
-		assertEquals("b", stack.peek());
-		assertEquals("b", stack.peek());
+		String b = "b";
+		assertSame(stack.peek(), b);
+		assertSame(stack.peek(), b);
 		assertFalse(stack.isEmpty());
 		assertTrue(stack.isFull());
 	}
